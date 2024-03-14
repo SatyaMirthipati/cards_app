@@ -1,0 +1,54 @@
+name: cards_app
+
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cached_network_image: ^3.3.0
+  cupertino_icons: ^1.0.2
+  dio: ^5.3.3
+  intl: ^0.18.1
+  flutter_portal: ^1.1.4
+  provider: ^6.1.1
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: Outfit
+      fonts:
+        - asset: assets/fonts/outfit/Outfit-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/outfit/Outfit-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/outfit/Outfit-Regular.ttf
+          weight: 400
+
+    - family: Avenir
+      fonts:
+        - asset: assets/fonts/avenir/Avenir-Heavy.ttf
+          weight: 700
+        - asset: assets/fonts/avenir/Avenir-Medium.ttf
+          weight: 600
+        - asset: assets/fonts/avenir/Avenir-Book.ttf
+          weight: 400
