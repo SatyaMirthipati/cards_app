@@ -1,3 +1,4 @@
+import 'package:cards_app/ui/screens/game/game_screen.dart';
 import 'package:cards_app/ui/screens/users/users_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,7 +7,6 @@ import '../../../bloc/main_bloc.dart';
 import '../../../resources/colors.dart';
 import '../../../resources/images.dart';
 import '../../widgets/dialog_confirm.dart';
-import '../game/game_screen.dart';
 import '../home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -26,18 +26,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  String getTitle(int index) {
-    switch (index) {
-      case 0:
-        return 'Home';
-      case 1:
-        return 'Games';
-      case 2:
-        return 'Users';
-    }
-    return 'NA';
-  }
-
   @override
   Widget build(BuildContext context) {
     var mainBloc = Provider.of<MainBloc>(context, listen: true);
@@ -52,10 +40,6 @@ class _MainScreenState extends State<MainScreen> {
         return true;
       },
       child: Scaffold(
-        appBar: AppBar(
-          titleSpacing: 20,
-          title: Text(getTitle(mainBloc.index)),
-        ),
         extendBody: true,
         body: Builder(
           builder: (context) {
@@ -65,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
               case 1:
                 return GameScreen();
               case 2:
-                return UsersScreen();
+                return const UsersScreen();
               default:
                 return Container();
             }
@@ -83,36 +67,36 @@ class _MainScreenState extends State<MainScreen> {
           items: const [
             BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(4.0),
                 child: ImageIcon(AssetImage(Images.home)),
               ),
               activeIcon: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(4.0),
                 child: ImageIcon(AssetImage(Images.home)),
               ),
               label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(4.0),
                 child: ImageIcon(AssetImage(Images.game)),
               ),
               activeIcon: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(4.0),
                 child: ImageIcon(AssetImage(Images.game)),
               ),
               label: 'Games',
             ),
             BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(4.0),
                 child: ImageIcon(AssetImage(Images.users)),
               ),
               activeIcon: Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(4.0),
                 child: ImageIcon(AssetImage(Images.users)),
               ),
-              label: 'Users',
+              label: 'Players',
             ),
           ],
         ),
