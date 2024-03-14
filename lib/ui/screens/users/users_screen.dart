@@ -44,12 +44,19 @@ class UsersScreen extends StatelessWidget {
           if (!snapshot.hasData) return const LoadingWidget();
           var list = snapshot.data ?? [];
           if (list.isEmpty) return const EmptyWidget();
-          return ListView.builder(
-            itemCount: list.length,
-            padding: const EdgeInsets.all(10),
-            itemBuilder: (context, index) {
-              return UserCard(user: list[index]);
-            },
+          return ListView(
+            children: [
+              ListView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: list.length,
+                padding: const EdgeInsets.all(10),
+                itemBuilder: (context, index) {
+                  return UserCard(user: list[index]);
+                },
+              ),
+              const SizedBox(height: 100),
+            ],
           );
         },
       ),
