@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:provider/provider.dart';
 
+import 'bloc/game_bloc.dart';
 import 'bloc/main_bloc.dart';
 import 'bloc/progress_bloc.dart';
 import 'bloc/user_bloc.dart';
@@ -20,8 +21,9 @@ class App extends StatelessWidget {
       child: MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => ProgressBloc()),
-          ChangeNotifierProvider(create: (_) => UserBloc()),
           ChangeNotifierProvider(create: (_) => MainBloc()),
+          ChangeNotifierProvider(create: (_) => UserBloc()),
+          ChangeNotifierProvider(create: (_) => GameBloc()),
         ],
         child: ProgressBlockWidget(
           child: MaterialApp(

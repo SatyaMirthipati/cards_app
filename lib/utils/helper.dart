@@ -3,6 +3,11 @@ import 'package:intl/intl.dart';
 
 class Helper {
   static final currency = NumberFormat("#,##0.00", "en_US");
+
+  static const statuses = {
+    'IN_PROGRESS': 'In Progress',
+    'COMPLETED': 'Completed',
+  };
 }
 
 class CapitalizeEachWordFormatter extends TextInputFormatter {
