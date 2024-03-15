@@ -28,7 +28,7 @@ class App extends StatelessWidget {
         child: ProgressBlockWidget(
           child: MaterialApp(
             navigatorKey: navigatorKey,
-            title: 'Cards App',
+            title: 'Shuffle Squad',
             debugShowCheckedModeBanner: false,
             theme: AppTheme.theme,
             home: const SplashScreen(),

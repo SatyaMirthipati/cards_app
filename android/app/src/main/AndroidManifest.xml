@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:label="cards_app"
+        android:label="Shuffle Squad"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
