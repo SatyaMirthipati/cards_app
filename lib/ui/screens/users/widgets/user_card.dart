@@ -28,7 +28,7 @@ class UserCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: DetailsTile(
-                        title: const Text('User name'),
+                        title: const Text('Player name'),
                         value: Text((user.name ?? 'NA').toCapitalized()),
                       ),
                     ),

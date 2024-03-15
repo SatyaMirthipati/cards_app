@@ -14,7 +14,7 @@ class EmptyWidget extends StatelessWidget {
     Key? key,
     this.image,
     this.message = 'No Data Found',
-    this.size = 60,
+    this.size = 80,
     this.subtitle,
     this.fontColor, this.style,
   }) : super(key: key);
