@@ -81,17 +81,21 @@ class GameDetailsScreen extends StatelessWidget {
         }
         return Scaffold(
           appBar: AppBar(title: const Text('Game Details')),
-          body: ListView.builder(
-            padding: const EdgeInsets.all(20),
-            itemCount: shows.length,
-            itemBuilder: (context, index) {
-              return GameDetailsCard(show: shows[index]);
-            },
+          body: Padding(
+            padding: const EdgeInsets.only(bottom: 80),
+            child: ListView.builder(
+              padding: const EdgeInsets.all(20),
+              itemCount: shows.length,
+              itemBuilder: (context, index) {
+                return GameDetailsCard(show: shows[index]);
+              },
+            ),
           ),
           extendBody: true,
           bottomNavigationBar: Container(
+            height: 80,
             padding: const EdgeInsets.all(20),
-            color: Colors.transparent,
+            color: Colors.white,
             child: Row(
               children: [
                 Expanded(
