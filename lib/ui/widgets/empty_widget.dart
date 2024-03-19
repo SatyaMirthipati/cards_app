@@ -16,7 +16,8 @@ class EmptyWidget extends StatelessWidget {
     this.message = 'No Data Found',
     this.size = 80,
     this.subtitle,
-    this.fontColor, this.style,
+    this.fontColor,
+    this.style,
   }) : super(key: key);
 
   @override
@@ -36,10 +37,11 @@ class EmptyWidget extends StatelessWidget {
             const SizedBox(height: 20),
             Text(
               message,
-              style: style ?? textTheme.titleLarge?.copyWith(
-                color: fontColor,
-                fontSize: 18,
-              ),
+              style: style ??
+                  textTheme.titleLarge?.copyWith(
+                    color: fontColor,
+                    fontSize: 18,
+                  ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),

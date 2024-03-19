@@ -7,6 +7,5 @@ class Images {
   static const crown = 'assets/icons/crown.png';
   static const loose = 'assets/icons/loose.png';
 
-
   static const success = 'assets/images/success.json';
 }
