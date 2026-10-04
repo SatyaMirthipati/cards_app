@@ -1,5 +1,4 @@
 import 'game_details.dart';
-import 'user.dart';
 
 class Game {
   String? status;

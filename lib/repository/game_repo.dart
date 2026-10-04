@@ -1,7 +1,6 @@
-import 'package:cards_app/data/network/api_client.dart';
-import 'package:cards_app/data/network/api_endpoints.dart';
-import 'package:cards_app/model/game_details.dart';
-
+import '../data/network/api_client.dart';
+import '../data/network/api_endpoints.dart';
+import '../model/game_details.dart';
 import '../model/game.dart';
 
 class GameRepo {

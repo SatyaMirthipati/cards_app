@@ -79,7 +79,7 @@ class _UpdateUserScreenBodyState extends State<UpdateUserScreenBody> {
             Text(
               'Enter the following details to proceed',
               style: textTheme.labelSmall!.copyWith(
-                color: Colors.black.withOpacity(0.6),
+                color: Colors.black.withValues(alpha: 0.6),
               ),
             ),
             const SizedBox(height: 30),

@@ -67,8 +67,8 @@ class GameCard extends StatelessWidget {
                             ),
                             decoration: BoxDecoration(
                               color: game.status == 'IN_PROGRESS'
-                                  ? MyColors.pending.withOpacity(0.2)
-                                  : MyColors.completed.withOpacity(0.2),
+                                  ? MyColors.pending.withValues(alpha: 0.2)
+                                  : MyColors.completed.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Text(

@@ -45,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
           builder: (context) {
             switch (mainBloc.index) {
               case 0:
-                return HomeScreen();
+                return const HomeScreen();
               case 1:
                 return const GameScreen();
               case 2:
@@ -134,7 +134,7 @@ class IconWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
               color: selected
                   ? MyColors.primaryColor
-                  : MyColors.primaryColor.withOpacity(0.3),
+                  : MyColors.primaryColor.withValues(alpha: 0.3),
             ),
             child: Column(
               children: [

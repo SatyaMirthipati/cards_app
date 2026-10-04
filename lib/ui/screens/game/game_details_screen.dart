@@ -1,12 +1,12 @@
-import 'package:cards_app/bloc/game_bloc.dart';
-import 'package:cards_app/model/game_details.dart';
-import 'package:cards_app/ui/screens/main/main_screen.dart';
-import 'package:cards_app/ui/screens/success_screen.dart';
-import 'package:cards_app/ui/widgets/empty_widget.dart';
-import 'package:cards_app/ui/widgets/progress_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../bloc/game_bloc.dart';
+import '../../../model/game_details.dart';
+import '../main/main_screen.dart';
+import '../success_screen.dart';
+import '../../widgets/empty_widget.dart';
+import '../../widgets/progress_button.dart';
 import '../../widgets/error_widget.dart';
 import '../../widgets/loading_widget.dart';
 import 'add_points_screen.dart';

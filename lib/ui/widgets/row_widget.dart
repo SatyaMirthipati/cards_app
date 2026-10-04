@@ -16,7 +16,7 @@ class RowWidget extends StatelessWidget {
           title,
           style: textTheme.titleMedium!.copyWith(
             fontSize: 13,
-            color: Colors.black.withOpacity(0.7),
+            color: Colors.black.withValues(alpha: 0.7),
           ),
         ),
         Text(

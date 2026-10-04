@@ -20,14 +20,14 @@ class StatusProgressBar extends StatelessWidget {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: i > index
-                  ? Border.all(color: accentColor.withOpacity(0.5), width: 2)
+                  ? Border.all(color: accentColor.withValues(alpha: 0.5), width: 2)
                   : null,
               color: i > index ? null : accentColor,
             ),
-            padding: EdgeInsets.all(2),
+            padding: const EdgeInsets.all(2),
             child: i > index
                 ? CircleAvatar(
-                    backgroundColor: accentColor.withOpacity(0.5),
+                    backgroundColor: accentColor.withValues(alpha: 0.5),
                     radius: 6,
                   )
                 : const Icon(
@@ -40,7 +40,7 @@ class StatusProgressBar extends StatelessWidget {
             Expanded(
               child: Container(
                 height: 3,
-                color: i < index ? accentColor : accentColor.withOpacity(0.5),
+                color: i < index ? accentColor : accentColor.withValues(alpha: 0.5),
               ),
             ),
         ]

@@ -23,7 +23,7 @@ class DetailsTile extends StatelessWidget {
         children: [
           DefaultTextStyle(
             style: textTheme.titleMedium!.copyWith(
-              color: Colors.black.withOpacity(0.7),
+              color: Colors.black.withValues(alpha: 0.7),
               fontWeight: FontWeight.w500,
               fontSize: 13,
             ),

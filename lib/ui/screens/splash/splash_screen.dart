@@ -11,7 +11,7 @@ class SplashScreen extends StatefulWidget {
   static Future open(BuildContext context) {
     return Navigator.of(context).pushAndRemoveUntil(
       MaterialPageRoute(
-        builder: (context) => SplashScreen(),
+        builder: (context) => const SplashScreen(),
       ),
       (_) => false,
     );

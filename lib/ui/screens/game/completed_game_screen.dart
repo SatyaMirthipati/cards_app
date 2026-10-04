@@ -1,8 +1,8 @@
-import 'package:cards_app/bloc/game_bloc.dart';
-import 'package:cards_app/model/game_details.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../bloc/game_bloc.dart';
+import '../../../model/game_details.dart';
 import '../../widgets/empty_widget.dart';
 import '../../widgets/error_widget.dart';
 import '../../widgets/loading_widget.dart';

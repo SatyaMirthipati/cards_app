@@ -58,7 +58,7 @@ class ProgressButtonState extends State<ProgressButton> {
     var progressBloc = Provider.of<ProgressBloc>(context, listen: false);
     return ElevatedButton(
       style: ButtonStyle(
-        minimumSize: MaterialStateProperty.all(
+        minimumSize: WidgetStateProperty.all(
           const Size(double.maxFinite, 40),
         ),
       ),
