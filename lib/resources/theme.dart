@@ -121,7 +121,7 @@ class AppTheme {
     var border = OutlineInputBorder(
       borderRadius: BorderRadius.circular(10),
       borderSide: BorderSide(
-        color: MyColors.divider.withOpacity(0.2),
+        color: MyColors.divider.withValues(alpha: 0.2),
         width: 1,
       ),
     );
@@ -131,16 +131,15 @@ class AppTheme {
       scaffoldBackgroundColor: Colors.white,
       textSelectionTheme: TextSelectionThemeData(
         cursorColor: Colors.black,
-        selectionColor: primaryColor.withOpacity(0.3),
+        selectionColor: primaryColor.withValues(alpha: 0.3),
         selectionHandleColor: primaryColor,
       ),
       primaryColor: primaryColor,
-      indicatorColor: primaryColor,
       canvasColor: Colors.white,
       textTheme: textTheme,
       primaryTextTheme: textTheme,
       typography: typography,
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         elevation: 0,
         margin: const EdgeInsets.all(0),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -157,7 +156,7 @@ class AppTheme {
         iconTheme: const IconThemeData(color: Colors.black),
         titleTextStyle: titleLarge.copyWith(color: Colors.black, fontSize: 18),
       ),
-      dialogTheme: DialogTheme(
+      dialogTheme: DialogThemeData(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
@@ -219,12 +218,14 @@ class AppTheme {
         filled: false,
         hintStyle: bodySmall.copyWith(
           fontSize: 14,
-          color: Colors.black.withOpacity(0.5),
+          color: Colors.black.withValues(alpha: 0.5),
         ),
         border: border,
         enabledBorder: border,
         focusedBorder: border,
-        labelStyle: titleMedium.copyWith(color: Colors.black.withOpacity(0.7)),
+        labelStyle: titleMedium.copyWith(
+          color: Colors.black.withValues(alpha: 0.7),
+        ),
         floatingLabelBehavior: FloatingLabelBehavior.auto,
       ),
       iconTheme: const IconThemeData(color: Colors.black, size: 24),
@@ -239,59 +240,59 @@ class AppTheme {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
-        side: MaterialStateBorderSide.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        side: WidgetStateBorderSide.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return const BorderSide(width: 2, color: MyColors.primaryColor);
           }
           return const BorderSide(width: 2, color: Colors.grey);
         }),
-        checkColor: MaterialStateProperty.all(MyColors.primaryColor),
-        fillColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        checkColor: WidgetStateProperty.all(MyColors.primaryColor),
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return Colors.white;
           }
           return const Color(0xFFFFFFFF);
         }),
-        overlayColor: MaterialStateProperty.all(const Color(0xFFFFFFFF)),
+        overlayColor: WidgetStateProperty.all(const Color(0xFFFFFFFF)),
       ),
       radioTheme: RadioThemeData(
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        fillColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return primaryColor;
           } else {
             return const Color(0xFFB5B5B5);
           }
         }),
       ).copyWith(
-        fillColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+        fillColor:
+            WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return null;
           }
-          if (states.contains(MaterialState.selected)) {
+          if (states.contains(WidgetState.selected)) {
             return primaryColor;
           }
           return null;
         }),
       ),
       switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+        thumbColor:
+            WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return null;
           }
-          if (states.contains(MaterialState.selected)) {
+          if (states.contains(WidgetState.selected)) {
             return MyColors.primaryColor;
           }
           return null;
         }),
-        trackColor: MaterialStateProperty.resolveWith<Color?>(
-            (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+        trackColor:
+            WidgetStateProperty.resolveWith<Color?>((Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return null;
           }
-          if (states.contains(MaterialState.selected)) {
+          if (states.contains(WidgetState.selected)) {
             return MyColors.primaryColor;
           }
           return null;
@@ -301,8 +302,8 @@ class AppTheme {
         elevation: 3,
         backgroundColor: Colors.white,
         disabledColor: Colors.grey,
-        selectedColor: MyColors.primaryColor.withOpacity(0.3),
-        secondarySelectedColor: MyColors.primaryColor.withOpacity(0.3),
+        selectedColor: MyColors.primaryColor.withValues(alpha: 0.3),
+        secondarySelectedColor: MyColors.primaryColor.withValues(alpha: 0.3),
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
         shape: const StadiumBorder(),
       ),
@@ -310,12 +311,12 @@ class AppTheme {
         activeTrackColor: primaryColor,
         activeTickMarkColor: primaryColor,
         thumbColor: primaryColor,
-        inactiveTrackColor: primaryColor.withOpacity(.2),
+        inactiveTrackColor: primaryColor.withValues(alpha: .2),
       ),
-      tabBarTheme: TabBarTheme(
+      tabBarTheme: TabBarThemeData(
         indicatorSize: TabBarIndicatorSize.tab,
         // labelColor: MyColors.accentColor3,
-        unselectedLabelColor: Colors.black.withOpacity(0.7),
+        unselectedLabelColor: Colors.black.withValues(alpha: 0.7),
         labelStyle: titleLarge.copyWith(
           fontWeight: FontWeight.w700,
           // color: MyColors.accentColor3,
@@ -331,10 +332,8 @@ class AppTheme {
         secondary: primaryColor,
         onSecondary: Colors.white,
         brightness: Brightness.light,
-        background: Colors.white,
-      ).copyWith(
-        background: Colors.white,
-      ),
+        surface: Colors.white,
+      ).copyWith(surface: Colors.white),
     );
   }
 
